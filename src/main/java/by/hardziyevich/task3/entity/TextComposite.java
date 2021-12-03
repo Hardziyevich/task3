@@ -22,6 +22,11 @@ public class TextComposite implements TextComponent {
     }
 
     @Override
+    public List<TextComponent> allComponent() {
+        return List.copyOf(textComposites);
+    }
+
+    @Override
     public TextType getType() {
         return textType;
     }
@@ -29,7 +34,10 @@ public class TextComposite implements TextComponent {
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        textComposites.forEach(x -> stringBuilder.append(x.toString()).append(textType.getDelimiter()));
+        textComposites.forEach(x -> stringBuilder
+                .append(textType.getPrefix())
+                .append(x.toString())
+                .append(textType.getPostfix()));
         return stringBuilder.toString();
     }
 }

@@ -1,22 +1,31 @@
 package by.hardziyevich.task3.entity;
 
 public enum TextType {
-    PARAGRAPH("\n\t"),
-    SENTENCE(""),
-    LEXEME(" "),
-    WORD(""),
-    EXPRESSION(""),
-    LETTER(""),
-    PUNCTUATION(""),
-    SYMBOL("");
+    TEXT("\t","\r\n"),
+    PARAGRAPH("",""),
+    SENTENCE(""," "),
+    LEXEME("",""),
+    WORD("",""),
+    EXPRESSION("",""),
+    PUNCTUATION("",""),
+    DIGIT("",""),
+    LETTER("",""),
+    CONSONANT("",""),
+    VOWEL("","");
 
-    private final String delimiter;
+    private final String prefix;
+    private final String postfix;
 
-    TextType(String delimiter) {
-        this.delimiter = delimiter;
+    TextType(String prefix, String postfix) {
+        this.postfix = postfix;
+        this.prefix = prefix;
     }
 
-    public String getDelimiter() {
-        return delimiter;
+    public String getPostfix() {
+        return postfix;
+    }
+
+    public String getPrefix() {
+        return prefix;
     }
 }

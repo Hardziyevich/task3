@@ -1,10 +1,12 @@
 package by.hardziyevich.task3.entity;
 
-public class Leaf implements TextComponent {
+import java.util.List;
+
+public class TextLeaf implements TextComponent {
     private final TextType textType;
     private final char leaf;
 
-    public Leaf(TextType textType, char leaf) {
+    public TextLeaf(TextType textType, char leaf) {
         this.textType = textType;
         this.leaf = leaf;
     }
@@ -20,12 +22,17 @@ public class Leaf implements TextComponent {
     }
 
     @Override
+    public List<TextComponent> allComponent() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public TextType getType() {
         return textType;
     }
 
     @Override
     public String toString() {
-        return leaf + textType.getDelimiter();
+        return String.valueOf(leaf);
     }
 }
