@@ -38,6 +38,12 @@ public class TextComposite implements TextComponent {
                 .append(textType.getPrefix())
                 .append(x.toString())
                 .append(textType.getPostfix()));
+        if(textType == TextType.PARAGRAPH){
+            stringBuilder.delete(stringBuilder.length() - 1,stringBuilder.length());
+        }
+        else if(textType == TextType.TEXT){
+            stringBuilder.delete(stringBuilder.length() - 2,stringBuilder.length());
+        }
         return stringBuilder.toString();
     }
 }

@@ -1,18 +1,19 @@
 package parser;
 
 import by.hardziyevich.task3.entity.TextComponent;
-import by.hardziyevich.task3.parser.TextParser;
-import by.hardziyevich.task3.parser.WordParser;
+import by.hardziyevich.task3.parser.Parser;
+import by.hardziyevich.task3.parser.impl.WordParser;
 import org.junit.jupiter.api.Test;
 
-public class WordParserTest {
+import static org.junit.jupiter.api.Assertions.*;
+
+class WordParserTest {
 
     @Test
     void testWordParser(){
         String word = "Pasha";
-        TextParser wordParser = new WordParser();
+        Parser wordParser = new WordParser();
         TextComponent wordComponent = wordParser.parse(word);
-        wordComponent.allComponent().forEach(x -> System.out.println(x.toString() + " type " + x.getType()));
-
+        assertEquals(word,wordComponent.toString());
     }
 }

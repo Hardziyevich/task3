@@ -1,7 +1,7 @@
 package by.hardziyevich.task3.entity;
 
 public enum TextType {
-    TEXT("\t","\r\n"),
+    TEXT("","\r\n"),
     PARAGRAPH("",""),
     SENTENCE(""," "),
     LEXEME("",""),
