@@ -1,6 +1,6 @@
 package entity;
 
-import by.hardziyevich.task3.entity.TextLeaf;
+import by.hardziyevich.task3.entity.Symbol;
 import by.hardziyevich.task3.entity.TextComposite;
 import by.hardziyevich.task3.entity.TextType;
 import org.junit.jupiter.api.Test;
@@ -22,27 +22,27 @@ public class TextCompositeTest {
         TextComposite word4 = new TextComposite(TextType.WORD);
         TextComposite lexeme1 = new TextComposite(TextType.LEXEME);
         TextComposite lexeme2 = new TextComposite(TextType.LEXEME);
-        TextLeaf symbol1 = new TextLeaf(TextType.DIGIT,'I');
-        TextLeaf symbol2 = new TextLeaf(TextType.DIGIT,'a');
-        TextLeaf symbol3 = new TextLeaf(TextType.DIGIT,'m');
-        TextLeaf symbol4 = new TextLeaf(TextType.DIGIT,'P');
-        TextLeaf symbol5 = new TextLeaf(TextType.DIGIT,'a');
-        TextLeaf symbol6 = new TextLeaf(TextType.DIGIT,'s');
-        TextLeaf symbol7 = new TextLeaf(TextType.DIGIT,'h');
-        TextLeaf symbol8 = new TextLeaf(TextType.DIGIT,'a');
-        TextLeaf symbol9 = new TextLeaf(TextType.PUNCTUATION,'.');
+        Symbol symbol1 = new Symbol(TextType.DIGIT,'I');
+        Symbol symbol2 = new Symbol(TextType.DIGIT,'a');
+        Symbol symbol3 = new Symbol(TextType.DIGIT,'m');
+        Symbol symbol4 = new Symbol(TextType.DIGIT,'P');
+        Symbol symbol5 = new Symbol(TextType.DIGIT,'a');
+        Symbol symbol6 = new Symbol(TextType.DIGIT,'s');
+        Symbol symbol7 = new Symbol(TextType.DIGIT,'h');
+        Symbol symbol8 = new Symbol(TextType.DIGIT,'a');
+        Symbol symbol9 = new Symbol(TextType.PUNCTUATION,'.');
 
-        TextLeaf symbol10 = new TextLeaf(TextType.DIGIT,'I');
-        TextLeaf symbol11 = new TextLeaf(TextType.DIGIT,'a');
-        TextLeaf symbol12 = new TextLeaf(TextType.DIGIT,'m');
-        TextLeaf symbol13 = new TextLeaf(TextType.DIGIT,'N');
-        TextLeaf symbol14 = new TextLeaf(TextType.DIGIT,'a');
-        TextLeaf symbol15 = new TextLeaf(TextType.DIGIT,'t');
-        TextLeaf symbol16 = new TextLeaf(TextType.DIGIT,'a');
-        TextLeaf symbol17 = new TextLeaf(TextType.DIGIT,'s');
-        TextLeaf symbol18 = new TextLeaf(TextType.DIGIT,'h');
-        TextLeaf symbol19 = new TextLeaf(TextType.DIGIT,'a');
-        TextLeaf symbol20 = new TextLeaf(TextType.PUNCTUATION,'!');
+        Symbol symbol10 = new Symbol(TextType.DIGIT,'I');
+        Symbol symbol11 = new Symbol(TextType.DIGIT,'a');
+        Symbol symbol12 = new Symbol(TextType.DIGIT,'m');
+        Symbol symbol13 = new Symbol(TextType.DIGIT,'N');
+        Symbol symbol14 = new Symbol(TextType.DIGIT,'a');
+        Symbol symbol15 = new Symbol(TextType.DIGIT,'t');
+        Symbol symbol16 = new Symbol(TextType.DIGIT,'a');
+        Symbol symbol17 = new Symbol(TextType.DIGIT,'s');
+        Symbol symbol18 = new Symbol(TextType.DIGIT,'h');
+        Symbol symbol19 = new Symbol(TextType.DIGIT,'a');
+        Symbol symbol20 = new Symbol(TextType.PUNCTUATION,'!');
 
         word1.addText(symbol2);
         word1.addText(symbol3);

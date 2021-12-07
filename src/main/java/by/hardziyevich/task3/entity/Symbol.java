@@ -2,13 +2,13 @@ package by.hardziyevich.task3.entity;
 
 import java.util.List;
 
-public class TextLeaf implements TextComponent {
+public class Symbol implements TextComponent {
     private final TextType textType;
-    private final char leaf;
+    private final char symbol;
 
-    public TextLeaf(TextType textType, char leaf) {
+    public Symbol(TextType textType, char symbol) {
         this.textType = textType;
-        this.leaf = leaf;
+        this.symbol = symbol;
     }
 
     @Override
@@ -33,6 +33,6 @@ public class TextLeaf implements TextComponent {
 
     @Override
     public String toString() {
-        return String.valueOf(leaf);
+        return String.valueOf(symbol);
     }
 }

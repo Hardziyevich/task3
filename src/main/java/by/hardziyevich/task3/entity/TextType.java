@@ -7,9 +7,9 @@ public enum TextType {
     LEXEME("",""),
     WORD("",""),
     EXPRESSION("",""),
+    LETTER("",""),
     PUNCTUATION("",""),
     DIGIT("",""),
-    LETTER("",""),
     CONSONANT("",""),
     VOWEL("","");
 
