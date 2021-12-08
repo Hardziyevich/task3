@@ -2,7 +2,7 @@ package by.hardziyevich.task3.parser;
 
 import by.hardziyevich.task3.entity.TextComponent;
 
-public interface IParser {
+public interface BaseParser {
     String TEXT_DELIMITER_REG = "\r\n";
     String PARAGRAPH_DELIMITER_REG = ".+?[.?!…](?=\\s|$)";
     String SENTENCE_DELIMITER_REG = " ";

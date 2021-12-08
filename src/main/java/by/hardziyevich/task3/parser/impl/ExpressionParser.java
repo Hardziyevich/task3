@@ -3,14 +3,14 @@ package by.hardziyevich.task3.parser.impl;
 import by.hardziyevich.task3.entity.TextComponent;
 import by.hardziyevich.task3.entity.TextComposite;
 import by.hardziyevich.task3.entity.Symbol;
-import by.hardziyevich.task3.parser.IParser;
+import by.hardziyevich.task3.parser.BaseParser;
 
 import static by.hardziyevich.task3.entity.TextType.EXPRESSION;
 import static by.hardziyevich.task3.entity.TextType.DIGIT;
 import static by.hardziyevich.task3.entity.TextType.PUNCTUATION;
 
 
-public class ExpressionParser implements IParser {
+public class ExpressionParser implements BaseParser {
 
     private static final ExpressionParser instance = new ExpressionParser();
 

@@ -6,7 +6,7 @@ import by.hardziyevich.task3.entity.TextType;
 import java.util.List;
 import java.util.Map;
 
-public interface IService {
+public interface BaseService {
     List<TextComponent> sortBySentence(TextComponent component);
     List<TextComponent> findSentencesWithLongerWord(TextComponent component);
     List<TextComponent> removeSentenceWithWordLess(int n, TextComponent component);

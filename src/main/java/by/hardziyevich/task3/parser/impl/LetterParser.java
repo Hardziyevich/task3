@@ -4,11 +4,11 @@ import by.hardziyevich.task3.entity.TextComponent;
 import by.hardziyevich.task3.entity.Symbol;
 import by.hardziyevich.task3.entity.TextComposite;
 import by.hardziyevich.task3.entity.TextType;
-import by.hardziyevich.task3.parser.IParser;
+import by.hardziyevich.task3.parser.BaseParser;
 
 import static by.hardziyevich.task3.entity.TextType.*;
 
-public class LetterParser implements IParser {
+public class LetterParser implements BaseParser {
 
     private static final LetterParser instance = new LetterParser();
 

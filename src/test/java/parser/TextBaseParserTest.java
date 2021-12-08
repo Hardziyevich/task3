@@ -1,13 +1,13 @@
 package parser;
 
 import by.hardziyevich.task3.entity.TextComponent;
-import by.hardziyevich.task3.parser.IParser;
+import by.hardziyevich.task3.parser.BaseParser;
 import by.hardziyevich.task3.parser.impl.TextParser;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class TextIParserTest {
+class TextBaseParserTest {
 
     @Test
     void testParser(){
@@ -22,8 +22,8 @@ class TextIParserTest {
                 "content here's, making it look like readable English?\r\n" +
                 "It is a established fact that a reader will be of a page when looking at its layout...\r\n" +
                 "Bye бандерлоги.";
-        IParser iParser = TextParser.getInstance();
-        TextComponent parse = iParser.parse(test);
+        BaseParser baseParser = TextParser.getInstance();
+        TextComponent parse = baseParser.parse(test);
         assertEquals(test,parse.toString());
     }
 }

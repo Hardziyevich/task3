@@ -3,12 +3,12 @@ package by.hardziyevich.task3.parser.impl;
 import by.hardziyevich.task3.entity.Symbol;
 import by.hardziyevich.task3.entity.TextComponent;
 import by.hardziyevich.task3.entity.TextComposite;
-import by.hardziyevich.task3.parser.IParser;
+import by.hardziyevich.task3.parser.BaseParser;
 
 import static by.hardziyevich.task3.entity.TextType.PUNCTUATION;
 import static by.hardziyevich.task3.entity.TextType.SENTENCE;
 
-public class SentenceParser implements IParser {
+public class SentenceParser implements BaseParser {
 
     private static final SentenceParser instance = new SentenceParser();
 
@@ -22,22 +22,22 @@ public class SentenceParser implements IParser {
     @Override
     public TextComponent parse(String text) {
         TextComponent sentence = new TextComposite(SENTENCE);
-        IParser sentenceIParser;
+        BaseParser sentenceBaseParser;
         for (String word : text.split(SENTENCE_DELIMITER_REG)) {
             if (word.matches(LETTER_REG)) {
-                sentenceIParser = LetterParser.getInstance();
-                sentence.addText(sentenceIParser.parse(word));
+                sentenceBaseParser = LetterParser.getInstance();
+                sentence.addText(sentenceBaseParser.parse(word));
             } else if (word.matches(WORD_REG)) {
-                sentenceIParser = WordParser.getInstance();
-                sentence.addText(sentenceIParser.parse(word));
+                sentenceBaseParser = WordParser.getInstance();
+                sentence.addText(sentenceBaseParser.parse(word));
             } else if (word.matches(PUNCTUATION_REG)) {
                 sentence.addText(new Symbol(PUNCTUATION, word.charAt(0)));
             } else if (word.matches(EXPRESSION_REG)) {
-                sentenceIParser = ExpressionParser.getInstance();
-                sentence.addText(sentenceIParser.parse(word));
+                sentenceBaseParser = ExpressionParser.getInstance();
+                sentence.addText(sentenceBaseParser.parse(word));
             } else {
-                sentenceIParser = LexemeParser.getInstance();
-                sentence.addText(sentenceIParser.parse(word));
+                sentenceBaseParser = LexemeParser.getInstance();
+                sentence.addText(sentenceBaseParser.parse(word));
             }
         }
         return sentence;

@@ -2,7 +2,7 @@ package service;
 
 import by.hardziyevich.task3.entity.TextComponent;
 import by.hardziyevich.task3.entity.TextType;
-import by.hardziyevich.task3.parser.IParser;
+import by.hardziyevich.task3.parser.BaseParser;
 import by.hardziyevich.task3.parser.impl.TextParser;
 import by.hardziyevich.task3.service.impl.CompositeService;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ public class ServiceTest {
 
     @Test
     void test() {
-        IParser sentence = TextParser.getInstance();
+        BaseParser sentence = TextParser.getInstance();
         TextComponent parse = sentence.parse(test);
         parse.allComponent().forEach(x -> {
             System.out.println(x.getType());
@@ -48,7 +48,7 @@ public class ServiceTest {
 
     @Test
     void testFindSentencesWithLongerWord() {
-        IParser sentence = TextParser.getInstance();
+        BaseParser sentence = TextParser.getInstance();
         TextComponent parse = sentence.parse(test);
         CompositeService testService = new CompositeService();
         List<TextComponent> sentencesWithLongerWord = testService.findSentencesWithLongerWord(parse);
@@ -59,7 +59,7 @@ public class ServiceTest {
 
     @Test
     void testRemoveSentenceWithWordLess() {
-        IParser sentence = TextParser.getInstance();
+        BaseParser sentence = TextParser.getInstance();
         TextComponent parse = sentence.parse(test);
         CompositeService testService = new CompositeService();
         assertList(testService.removeSentenceWithWordLess(23, parse));
@@ -67,7 +67,7 @@ public class ServiceTest {
 
     @Test
     void testSameWord(){
-        IParser sentence = TextParser.getInstance();
+        BaseParser sentence = TextParser.getInstance();
         TextComponent parse = sentence.parse(test);
         CompositeService testService = new CompositeService();
         assertEquals(23, testService.findAllSameWord(parse).entrySet().size());
@@ -75,7 +75,7 @@ public class ServiceTest {
 
     @Test
     void testConsonantAndVowel(){
-        IParser sentence = TextParser.getInstance();
+        BaseParser sentence = TextParser.getInstance();
         TextComponent parse = sentence.parse(test);
         CompositeService testService = new CompositeService();
         assertAll(()->{

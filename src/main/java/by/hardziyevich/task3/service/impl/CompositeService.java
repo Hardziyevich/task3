@@ -2,7 +2,7 @@ package by.hardziyevich.task3.service.impl;
 
 import by.hardziyevich.task3.entity.TextComponent;
 import by.hardziyevich.task3.entity.TextType;
-import by.hardziyevich.task3.service.IService;
+import by.hardziyevich.task3.service.BaseService;
 
 import java.util.*;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import static by.hardziyevich.task3.entity.TextType.*;
 
-public class CompositeService implements IService {
+public class CompositeService implements BaseService {
 
     @Override
     public List<TextComponent> sortBySentence(TextComponent component) {
@@ -25,22 +25,22 @@ public class CompositeService implements IService {
         TextComponent maxWord = findAllType(WORD, component)
                 .stream()
                 .max(Comparator.comparingInt(x -> x.allComponent().size())).get();
-        return findAllType(SENTENCE, component)
+        List<TextComponent> result = findAllType(SENTENCE, component)
                 .stream()
-                .filter(x -> x
+                .filter(t -> t
                         .allComponent()
                         .stream()
-                        .filter(z -> z.getType() == WORD)
-                        .anyMatch(z -> z.allComponent().size() == maxWord.allComponent().size())
+                        .filter(c -> c.getType() == WORD)
+                        .anyMatch(c -> c.allComponent().size() == maxWord.allComponent().size())
                 )
                 .collect(Collectors.toList());
-
+        return result;
     }
 
     @Override
     public List<TextComponent> removeSentenceWithWordLess(int n, TextComponent component) {
         List<TextComponent> allType = findAllType(SENTENCE, component);
-        allType.removeIf(component1 -> findAllType(WORD, component1).size() < n);
+        allType.removeIf(c -> findAllType(WORD, c).size() < n);
         return allType;
     }
 
@@ -48,7 +48,7 @@ public class CompositeService implements IService {
     public Map<String, Long> findAllSameWord(TextComponent component) {
         List<TextComponent> word = findAllType(WORD, component);
         Map<String, Long> collect = word.stream().collect(Collectors.groupingBy(w -> w.toString().toLowerCase(), Collectors.counting()));
-        collect.entrySet().removeIf(x -> x.getValue() == 1);
+        collect.entrySet().removeIf(c -> c.getValue() == 1);
         return collect;
     }
 
