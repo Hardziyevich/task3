@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class WordBaseParserTest {
 
     @Test
-    void testWordParser(){
+    void testWordParser() {
         String word = "Pasha";
         BaseParser wordBaseParser = WordParser.getInstance();
         TextComponent wordComponent = wordBaseParser.parse(word);
-        assertEquals(word,wordComponent.toString());
+        assertEquals(word, wordComponent.toString());
     }
 }

@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ExpressionBaseParserTest {
 
     @Test
-    void testParser(){
+    void testParser() {
         String test = "13<<1";
         BaseParser expressionBaseParser = ExpressionParser.getInstance();
         TextComponent expression = expressionBaseParser.parse(test);
-        assertEquals(test,expression.toString());
+        assertEquals("26", expression.toString());
     }
 }

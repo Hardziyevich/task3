@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class TextCompositeTest {
 
     @Test
-    void testToString(){
+    void testToString() {
         TextComposite text = new TextComposite(TextType.TEXT);
         TextComposite paragraph1 = new TextComposite(TextType.PARAGRAPH);
         TextComposite paragraph2 = new TextComposite(TextType.PARAGRAPH);
@@ -22,27 +22,27 @@ public class TextCompositeTest {
         TextComposite word4 = new TextComposite(TextType.WORD);
         TextComposite lexeme1 = new TextComposite(TextType.LEXEME);
         TextComposite lexeme2 = new TextComposite(TextType.LEXEME);
-        Symbol symbol1 = new Symbol(TextType.DIGIT,'I');
-        Symbol symbol2 = new Symbol(TextType.DIGIT,'a');
-        Symbol symbol3 = new Symbol(TextType.DIGIT,'m');
-        Symbol symbol4 = new Symbol(TextType.DIGIT,'P');
-        Symbol symbol5 = new Symbol(TextType.DIGIT,'a');
-        Symbol symbol6 = new Symbol(TextType.DIGIT,'s');
-        Symbol symbol7 = new Symbol(TextType.DIGIT,'h');
-        Symbol symbol8 = new Symbol(TextType.DIGIT,'a');
-        Symbol symbol9 = new Symbol(TextType.PUNCTUATION,'.');
+        Symbol symbol1 = new Symbol(TextType.DIGIT, 'I');
+        Symbol symbol2 = new Symbol(TextType.DIGIT, 'a');
+        Symbol symbol3 = new Symbol(TextType.DIGIT, 'm');
+        Symbol symbol4 = new Symbol(TextType.DIGIT, 'P');
+        Symbol symbol5 = new Symbol(TextType.DIGIT, 'a');
+        Symbol symbol6 = new Symbol(TextType.DIGIT, 's');
+        Symbol symbol7 = new Symbol(TextType.DIGIT, 'h');
+        Symbol symbol8 = new Symbol(TextType.DIGIT, 'a');
+        Symbol symbol9 = new Symbol(TextType.PUNCTUATION, '.');
 
-        Symbol symbol10 = new Symbol(TextType.DIGIT,'I');
-        Symbol symbol11 = new Symbol(TextType.DIGIT,'a');
-        Symbol symbol12 = new Symbol(TextType.DIGIT,'m');
-        Symbol symbol13 = new Symbol(TextType.DIGIT,'N');
-        Symbol symbol14 = new Symbol(TextType.DIGIT,'a');
-        Symbol symbol15 = new Symbol(TextType.DIGIT,'t');
-        Symbol symbol16 = new Symbol(TextType.DIGIT,'a');
-        Symbol symbol17 = new Symbol(TextType.DIGIT,'s');
-        Symbol symbol18 = new Symbol(TextType.DIGIT,'h');
-        Symbol symbol19 = new Symbol(TextType.DIGIT,'a');
-        Symbol symbol20 = new Symbol(TextType.PUNCTUATION,'!');
+        Symbol symbol10 = new Symbol(TextType.DIGIT, 'I');
+        Symbol symbol11 = new Symbol(TextType.DIGIT, 'a');
+        Symbol symbol12 = new Symbol(TextType.DIGIT, 'm');
+        Symbol symbol13 = new Symbol(TextType.DIGIT, 'N');
+        Symbol symbol14 = new Symbol(TextType.DIGIT, 'a');
+        Symbol symbol15 = new Symbol(TextType.DIGIT, 't');
+        Symbol symbol16 = new Symbol(TextType.DIGIT, 'a');
+        Symbol symbol17 = new Symbol(TextType.DIGIT, 's');
+        Symbol symbol18 = new Symbol(TextType.DIGIT, 'h');
+        Symbol symbol19 = new Symbol(TextType.DIGIT, 'a');
+        Symbol symbol20 = new Symbol(TextType.PUNCTUATION, '!');
 
         word1.addText(symbol2);
         word1.addText(symbol3);

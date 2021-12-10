@@ -10,10 +10,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class LexemeBaseParserTest {
 
     @Test
-    void testParser(){
+    void testParser() {
         String lexemeTest = "Pasha,";
         BaseParser lexemeBaseParser = LexemeParser.getInstance();
         TextComponent lexeme = lexemeBaseParser.parse(lexemeTest);
-        assertEquals(lexemeTest,lexeme.toString());
+        assertEquals(lexemeTest, lexeme.toString());
     }
 }

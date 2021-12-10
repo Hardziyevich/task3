@@ -66,7 +66,7 @@ public class ServiceTest {
     }
 
     @Test
-    void testSameWord(){
+    void testSameWord() {
         BaseParser sentence = TextParser.getInstance();
         TextComponent parse = sentence.parse(test);
         CompositeService testService = new CompositeService();
@@ -74,17 +74,17 @@ public class ServiceTest {
     }
 
     @Test
-    void testConsonantAndVowel(){
+    void testConsonantAndVowel() {
         BaseParser sentence = TextParser.getInstance();
         TextComponent parse = sentence.parse(test);
         CompositeService testService = new CompositeService();
-        assertAll(()->{
-            assertEquals(377,testService.findConsonantAndVowel(parse).get(TextType.CONSONANT));
-            assertEquals(237,testService.findConsonantAndVowel(parse).get(TextType.VOWEL));
+        assertAll(() -> {
+            assertEquals(377, testService.findConsonantAndVowel(parse).get(TextType.CONSONANT));
+            assertEquals(237, testService.findConsonantAndVowel(parse).get(TextType.VOWEL));
         });
     }
 
-    private void assertList(List<TextComponent> textComponents){
+    private void assertList(List<TextComponent> textComponents) {
         assertEquals("It was popularised in the asdasd (asds) with the release of Letraset sheets.toString() containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker Faclon9 including versions of Lorem Ipsum! ",
                 textComponents.get(0).toString());
     }

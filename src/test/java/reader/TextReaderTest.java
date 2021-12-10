@@ -13,13 +13,13 @@ class TextReaderTest {
     private File file;
 
     @BeforeAll
-    void init(){
+    void init() {
         URL is = getClass().getClassLoader().getResource("text.txt");
         file = new File(is.getFile());
     }
 
     @Test
-    void testReader(){
+    void testReader() {
         TextReader test = new TextReader(file.toPath());
         System.out.println(test.readerFile());
     }

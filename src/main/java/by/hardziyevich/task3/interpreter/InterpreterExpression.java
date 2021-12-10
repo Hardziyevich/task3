@@ -39,6 +39,33 @@ public class InterpreterExpression implements Interpret {
         return result;
     }
 
+    private Interpret interpretDigit() {
+        return Integer::parseInt;
+    }
+
+    private Interpret interpretNot() {
+        return context -> ~Integer.parseInt(context);
+    }
+
+    public Interpret interpretOperation(String left, String right) {
+        return context -> {
+            switch (context) {
+                case ">>":
+                    return interpretDigit().interpret(left) >> interpretDigit().interpret(right);
+                case "<<":
+                    return interpretDigit().interpret(left) << interpretDigit().interpret(right);
+                case "&":
+                    return interpretDigit().interpret(left) & interpretDigit().interpret(right);
+                case "^":
+                    return interpretDigit().interpret(left) ^ interpretDigit().interpret(right);
+                case "|":
+                    return interpretDigit().interpret(left) | interpretDigit().interpret(right);
+                default:
+                    throw new UnsupportedOperationException();
+            }
+        };
+    }
+
     private String findOperation(String substring) {
         String find;
         String[] stringDigits;
@@ -89,9 +116,9 @@ public class InterpreterExpression implements Interpret {
         }
         return expression;
     }
-
     //That function is allow to us find inner bracket in expression.
     //She finds open bracket index and put in stack, before look for close bracket and creat substring.
+
     private String findInnerBrackets(String expression) {
         Stack<Integer> stack = new Stack<>();
         Pattern pattern = Pattern.compile("([(])|([)])");
@@ -104,33 +131,6 @@ public class InterpreterExpression implements Interpret {
             }
         }
         return expression;
-    }
-
-    private Interpret interpretDigit() {
-        return Integer::parseInt;
-    }
-
-    private Interpret interpretNot() {
-        return context -> ~Integer.parseInt(context);
-    }
-
-    public Interpret interpretOperation(String left, String right) {
-        return context -> {
-            switch (context) {
-                case ">>":
-                    return interpretDigit().interpret(left) >> interpretDigit().interpret(right);
-                case "<<":
-                    return interpretDigit().interpret(left) << interpretDigit().interpret(right);
-                case "&":
-                    return interpretDigit().interpret(left) & interpretDigit().interpret(right);
-                case "^":
-                    return interpretDigit().interpret(left) ^ interpretDigit().interpret(right);
-                case "|":
-                    return interpretDigit().interpret(left) | interpretDigit().interpret(right);
-                default:
-                    throw new UnsupportedOperationException();
-            }
-        };
     }
 
     private static class Stack<T> {

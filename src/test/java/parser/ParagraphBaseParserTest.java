@@ -15,6 +15,6 @@ class ParagraphBaseParserTest {
         BaseParser paragraphBaseParser = ParagraphParser.getInstance();
         TextComponent parse = paragraphBaseParser.parse(test);
         parse.allComponent().forEach(x -> System.out.println(x.getType()));
-        assertEquals(test,parse.toString());
+        assertEquals(test, parse.toString());
     }
 }

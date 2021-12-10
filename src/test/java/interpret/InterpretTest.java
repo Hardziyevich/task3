@@ -14,8 +14,8 @@ public class InterpretTest {
         String test2 = "5|(1&2&(3|(4&(1^5|6&47)|3)|(~89&4|(42&7)))|1)";
         String test3 = "4&(1^5|6&47)|3|(~89&4|42&7)";
         InterpreterExpression expression = new InterpreterExpression();
-        assertEquals(1200,expression.interpret(s));
-        assertEquals(5,expression.interpret(test2));
-        assertEquals(7,expression.interpret(test3));
+        assertEquals(1200, expression.interpret(s));
+        assertEquals(5, expression.interpret(test2));
+        assertEquals(7, expression.interpret(test3));
     }
 }
